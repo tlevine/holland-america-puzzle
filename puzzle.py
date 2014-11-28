@@ -99,6 +99,7 @@ def check_grid(grid:list):
 def main():
     for grid in itertools.permutations(pieces, len(pieces)):
         if check_grid(grid):
+            print(grid)
             pprint(grid, width = 40)
             break
 
