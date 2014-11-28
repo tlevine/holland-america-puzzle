@@ -63,6 +63,24 @@ pieces = [
     ],
 ]
 
+def left_right(left, right):
+    lthing, lorientation = left[1]
+    rthing, rorientation = right[3]
+    return lthing == rthing & (lorientation != rorientation)
+
+def up_down(top, bottom):
+    tthing, torientation = top[2]
+    bthing, borientation = bottom[0]
+    return tthing == bthing & (torientation != borientation)
+
+def check_row(row):
+    left, middle, right = row
+    return left_right(left, middle) & left_right(middle, right)
+
+def check_column(column)
+    top, middle, bottom = column
+    return up_down(top, middle) & top_down(middle, bottom)
+
 def check_grid(grid:list):
     rows = [grid[0:3], grid[3:6], grid[6:9]]
     columns = [grid[0::3], grid[1::3], grid[2::3]]
