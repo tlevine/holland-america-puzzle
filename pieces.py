@@ -6,10 +6,10 @@ images = [
 ]
 pieces = [
     [
-        ('boat', 'back'),
-        ('boat', 'back'),
         ('face', 'left'),
         ('person', 'top'),
+        ('boat', 'back'),
+        ('boat', 'back'),
     ],
     [
         ('face', 'right'),
@@ -24,6 +24,25 @@ pieces = [
         ('boat', 'back'),
     ],
     [
+        ('person', 'top'),
+        ('person', 'bottom'),
+        ('moose', 'front'),
+        ('moose', 'back'),
+    ],
+    [
+        ('face', 'right'),
+        ('moose', 'front'),
+        ('boat', 'front'),
+        ('person', 'top'),
+    ],
+    [
+        ('face', 'left'),
+        ('face', 'left'),
+        ('person', 'top'),
+        ('boat', 'back'),
+    ],
+    [
+        ('', ''),
         ('', ''),
         ('', ''),
         ('', ''),
@@ -32,28 +51,16 @@ pieces = [
         ('', ''),
         ('', ''),
         ('', ''),
-    ],
-    [
-        ('', ''),
-        ('', ''),
         ('', ''),
     ],
     [
         ('', ''),
         ('', ''),
         ('', ''),
-    ],
-    [
-        ('', ''),
-        ('', ''),
         ('', ''),
     ],
     [
         ('', ''),
-        ('', ''),
-        ('', ''),
-    ],
-    [
         ('', ''),
         ('', ''),
         ('', ''),
