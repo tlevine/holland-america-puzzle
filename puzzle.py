@@ -85,12 +85,17 @@ def check_column(column):
     top, middle, bottom = column
     return up_down(top, middle) & up_down(middle, bottom)
 
-def rotations(cell):
-    return [([cell]*2)[i:(i+4)] for i in range(4)]
+def rotations(cells):
+    for iii in itertools.combinations_with_replacement(range(4), 9):
+        yield [rotate(cell, i) for cell, i in zip(cells, iii)]
+
+def rotate(cell, i):
+    return [(cell*2)[i:(i+4)] for i in range(4)]
 
 def check_grid(grid:list):
     rows = [grid[0:3], grid[3:6], grid[6:9]]
     columns = [grid[0::3], grid[1::3], grid[2::3]]
+    return True
     for row in rows:
         if not check_row(row):
             return False
@@ -102,8 +107,11 @@ def check_grid(grid:list):
 def main():
     for i, grid in enumerate(itertools.permutations(pieces, len(pieces))):
         for grid_rotation in rotations(grid):
-            if check_grid(grid):
-                pprint(grid, width = 40)
+            pprint(grid[0])
+            pprint(grid_rotation[0])
+            return
+            if check_grid(grid_rotation):
+                pprint(grid_rotation, width = 40)
                 return
     print('No solution found')
 
