@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import itertools
 from pprint import pprint
 
@@ -69,12 +70,12 @@ pieces = [
 def left_right(left, right):
     lthing, lorientation = left[1]
     rthing, rorientation = right[3]
-    return lthing == rthing & (lorientation != rorientation)
+    return (lthing == rthing) & (lorientation != rorientation)
 
 def up_down(top, bottom):
     tthing, torientation = top[2]
     bthing, borientation = bottom[0]
-    return tthing == bthing & (torientation != borientation)
+    return (tthing == bthing) & (torientation != borientation)
 
 def check_row(row):
     left, middle, right = row
@@ -82,18 +83,18 @@ def check_row(row):
 
 def check_column(column):
     top, middle, bottom = column
-    return up_down(top, middle) & top_down(middle, bottom)
+    return up_down(top, middle) & up_down(middle, bottom)
 
 def check_grid(grid:list):
     rows = [grid[0:3], grid[3:6], grid[6:9]]
     columns = [grid[0::3], grid[1::3], grid[2::3]]
     for row in rows:
-        if check_row(row):
-            return True
+        if not check_row(row):
+            return False
     for column in columns:
-        if check_column(column):
-            return True
-    return False
+        if not check_column(column):
+            return False
+    return True
 
 def main():
     for grid in itertools.permutations(pieces, len(pieces)):
