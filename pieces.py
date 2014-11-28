@@ -62,3 +62,14 @@ pieces = [
         ('face', 'right'),
     ],
 ]
+
+def check_grid(grid:list):
+    rows = [grid[0:3], grid[3:6], grid[6:9]]
+    columns = [grid[0::3], grid[1::3], grid[2::3]]
+    for row in rows:
+        if check_row(row):
+            return True
+    for column in columns:
+        if check_column(column):
+            return True
+    return False
