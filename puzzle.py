@@ -97,11 +97,12 @@ def check_grid(grid:list):
     return True
 
 def main():
-    for grid in itertools.permutations(pieces, len(pieces)):
+    for i, grid in enumerate(itertools.permutations(pieces, len(pieces))):
         if check_grid(grid):
-            print(grid)
             pprint(grid, width = 40)
             break
+    else:
+        print('No solution found')
 
 if __name__ == '__main__':
     main()
