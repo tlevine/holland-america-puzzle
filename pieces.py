@@ -4,6 +4,8 @@ images = [
     'moose',
     'face',
 ]
+
+# clockwise from top
 pieces = [
     [
         ('face', 'left'),
@@ -12,10 +14,10 @@ pieces = [
         ('boat', 'back'),
     ],
     [
-        ('face', 'right'),
-        ('moose', 'back'),
         ('person', 'bottom'),
         ('boat', 'front'),
+        ('face', 'right'),
+        ('moose', 'back'),
     ],
     [
         ('face', 'left'),
@@ -24,16 +26,16 @@ pieces = [
         ('boat', 'back'),
     ],
     [
-        ('person', 'top'),
-        ('person', 'bottom'),
         ('moose', 'front'),
         ('moose', 'back'),
+        ('person', 'top'),
+        ('person', 'bottom'),
     ],
     [
-        ('face', 'right'),
         ('moose', 'front'),
         ('boat', 'front'),
         ('person', 'top'),
+        ('face', 'right'),
     ],
     [
         ('face', 'left'),
@@ -42,21 +44,21 @@ pieces = [
         ('boat', 'back'),
     ],
     [
-        ('face', 'right'),
-        ('moose', 'back'),
         ('boat', 'front'),
         ('moose', 'front'),
+        ('face', 'right'),
+        ('moose', 'back'),
     ],
     [
+        ('boat', 'front'),
+        ('moose', 'front'),
+        ('moose', 'back'),
         ('person', 'bottom'),
-        ('boat', 'front'),
-        ('moose', 'front'),
-        ('moose', 'back'),
     ],
     [
-        ('face', 'right'),
         ('person', 'bottom'),
         ('boat', 'front'),
         ('person', 'top'),
+        ('face', 'right'),
     ],
 ]
