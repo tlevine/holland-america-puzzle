@@ -107,9 +107,6 @@ def check_grid(grid:list):
 def main():
     for i, grid in enumerate(itertools.permutations(pieces, len(pieces))):
         for grid_rotation in rotations(grid):
-            pprint(grid[0])
-            pprint(grid_rotation[0])
-            return
             if check_grid(grid_rotation):
                 pprint(grid_rotation, width = 40)
                 return
