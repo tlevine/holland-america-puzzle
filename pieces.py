@@ -1,3 +1,6 @@
+import itertools
+from pprint import pprint
+
 images = [
     'boat',
     'person',
@@ -77,7 +80,7 @@ def check_row(row):
     left, middle, right = row
     return left_right(left, middle) & left_right(middle, right)
 
-def check_column(column)
+def check_column(column):
     top, middle, bottom = column
     return up_down(top, middle) & top_down(middle, bottom)
 
@@ -91,3 +94,12 @@ def check_grid(grid:list):
         if check_column(column):
             return True
     return False
+
+def main():
+    for grid in itertools.permutations(pieces, len(pieces)):
+        if check_grid(grid):
+            pprint(grid, width = 40)
+            break
+
+if __name__ == '__main__':
+    main()
